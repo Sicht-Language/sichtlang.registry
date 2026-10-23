@@ -1,0 +1,93 @@
+start
+load library "mathx"
+take mx_add from "mathx"
+take mx_sub from "mathx"
+take mx_mul from "mathx"
+take mx_div from "mathx"
+take mx_power from "mathx"
+take mx_factorial from "mathx"
+take mx_is_even from "mathx"
+take mx_is_odd from "mathx"
+take mx_min from "mathx"
+take mx_max from "mathx"
+
+set fails to 0
+
+if mx_add(2, 3) is equal to 5 then
+    print "[OK] add 2+3=5"
+otherwise
+    print "[FAIL] add"
+    set fails to fails + 1
+endif
+
+if mx_sub(10, 4) is equal to 6 then
+    print "[OK] sub 10-4=6"
+otherwise
+    print "[FAIL] sub"
+    set fails to fails + 1
+endif
+
+if mx_mul(3, 7) is equal to 21 then
+    print "[OK] mul 3*7=21"
+otherwise
+    print "[FAIL] mul"
+    set fails to fails + 1
+endif
+
+if mx_div(20, 5) is equal to 4 then
+    print "[OK] div 20/5=4"
+otherwise
+    print "[FAIL] div"
+    set fails to fails + 1
+endif
+
+if mx_power(2, 10) is equal to 1024 then
+    print "[OK] power 2^10=1024"
+otherwise
+    print "[FAIL] power"
+    set fails to fails + 1
+endif
+
+if mx_factorial(5) is equal to 120 then
+    print "[OK] factorial 5!=120"
+otherwise
+    print "[FAIL] factorial"
+    set fails to fails + 1
+endif
+
+if mx_is_even(4) then
+    print "[OK] is_even 4"
+otherwise
+    print "[FAIL] is_even"
+    set fails to fails + 1
+endif
+
+if mx_is_odd(7) then
+    print "[OK] is_odd 7"
+otherwise
+    print "[FAIL] is_odd"
+    set fails to fails + 1
+endif
+
+set mn to mx_min(3, 8)
+if mn is equal to 3 then
+    print "[OK] min of 3 and 8 is 3"
+otherwise
+    print "[FAIL] min"
+    set fails to fails + 1
+endif
+
+set mx to mx_max(3, 8)
+if mx is equal to 8 then
+    print "[OK] max of 3 and 8 is 8"
+otherwise
+    print "[FAIL] max"
+    set fails to fails + 1
+endif
+
+if fails is equal to 0 then
+    print "mathx: all tests passed"
+otherwise
+    print "mathx: " + cast fails to string + " test(s) failed"
+endif
+end

@@ -1,0 +1,6 @@
+# sicht-lang package registry index
+
+[[package]]
+name = "mathx"
+version = "1.0.0"
+description = "Basic math functions for Sicht"

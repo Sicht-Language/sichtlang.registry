@@ -1,0 +1,85 @@
+start
+create library mathx
+
+load library math
+take mod from math
+
+create function mx_add(a, b)
+    return a + b
+endfunction
+
+create function mx_sub(a, b)
+    return a - b
+endfunction
+
+create function mx_mul(a, b)
+    return a * b
+endfunction
+
+create function mx_div(a, b)
+    return a / b
+endfunction
+
+create function mx_power(base, exponent)
+    set result to 1
+    set i to 0
+    while i is less than exponent
+        set result to result * base
+        set i to i + 1
+    endwhile
+    return result
+endfunction
+
+create function mx_factorial(n)
+    set result to 1
+    set i to 2
+    while i is less than or equal to n
+        set result to result * i
+        set i to i + 1
+    endwhile
+    return result
+endfunction
+
+create function mx_is_even(n)
+    return mod(n, 2) is equal to 0
+endfunction
+
+create function mx_is_odd(n)
+    return mod(n, 2) is not equal to 0
+endfunction
+
+create function mx_min(a, b)
+    if a is less than b then
+        return a
+    endif
+    return b
+endfunction
+
+create function mx_max(a, b)
+    if a is greater than b then
+        return a
+    endif
+    return b
+endfunction
+
+offer mx_add
+offer mx_sub
+offer mx_mul
+offer mx_div
+offer mx_power
+offer mx_factorial
+offer mx_is_even
+offer mx_is_odd
+offer mx_min
+offer mx_max
+
+create syntax pack mathx_syntax version "1.0.0"
+    phrase mathx factorial of [n:expr] calls mx_factorial
+    phrase mathx is even [n:expr] calls mx_is_even
+    phrase mathx is odd [n:expr] calls mx_is_odd
+    offer syntax pack mathx_syntax
+end syntax pack
+
+offer mathx_syntax
+
+end

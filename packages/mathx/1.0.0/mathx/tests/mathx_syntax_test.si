@@ -1,0 +1,17 @@
+start
+
+use syntax mathx_syntax from "mathx"
+
+if mathx factorial of 5 is equal to 120 then
+    print "[OK] phrase factorial"
+otherwise
+    print "[FAIL] phrase factorial"
+endif
+
+if mathx is even 6 then
+    print "[OK] phrase is even"
+otherwise
+    print "[FAIL] phrase is even"
+endif
+
+end

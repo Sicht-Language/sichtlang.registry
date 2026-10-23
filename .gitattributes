@@ -1,0 +1,9 @@
+*.si   text eol=lf
+*.c    text eol=lf
+*.h    text eol=lf
+*.sh   text eol=lf
+*.ps1  text eol=lf
+*.md   text eol=lf
+*.toml text eol=lf
+lib/** binary
+**/lib/** binary
